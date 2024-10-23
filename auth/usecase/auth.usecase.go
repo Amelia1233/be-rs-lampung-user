@@ -121,6 +121,13 @@ func (u *AuthUsecase) InitStaticAdmins() error {
 			Name:     "Adi",
 			Email:    "adi@gmil.com.com",
 		},
+		{
+			Username: "dokter",
+			Password: "dokter123",
+			Roles:    `["DOKTER"]`,
+			Name:     "Ani",
+			Email:    "ani@gmil.com.com",
+		},
 	}
 
 	for _, admin := range admins {
@@ -171,7 +178,11 @@ func (u *AuthUsecase) getPermissionsForRoles(roles []string) []string {
 			permissionSet["DELETE_USR_MGT"] = true
 			permissionSet["GEN_RPT_BILL"] = true
 		// Tambahkan case untuk role lain jika diperlukan
-		}
+		
+		case "DOKTER":
+			permissionSet["MEMERIKSA"] = true
+	}
+
 	}
 
 	var permissions []string
