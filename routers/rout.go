@@ -16,7 +16,7 @@ type Routes struct {
 }
 
 func (r Routes) Routers() {
-	middleware.Add(r.R, middleware.CORSMiddleware())
+	r.R.Use(middleware.SetupCORS())
 	v1 := r.R.Group("user")
 
 	// Inisialisasi repository
