@@ -17,6 +17,7 @@ ENV DB_NAME=postgres
 ENV DB_PORT=5432
 ENV DB_PASS=12345678
 ENV DB_USER=postgres
+ENV DB_NAME=rsudam
 ENV FORM=http://localhost:8080
 ENV SECRET=aksdSasiaSIOpwk049323
 
